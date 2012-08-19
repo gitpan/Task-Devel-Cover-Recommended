@@ -9,11 +9,11 @@ Task::Devel::Cover::Recommended - Install Devel::Cover and its recommended depen
 
 =head1 VERSION
 
-Version 0.93.0
+Version v0.930.0
 
 =cut
 
-our $VERSION = '0.93.0';
+our $VERSION = 'v0.930.0';
 
 =head1 SYNOPSIS
 
@@ -39,6 +39,8 @@ This task module lets you easily install L<Devel::Cover> 0.93 and all its recomm
 
 =over 4
 
+=item L<ExtUtils::MakeMaker>
+
 =item L<Test::Differences>
 
 =item L<Test::More>
@@ -53,7 +55,7 @@ This task module lets you easily install L<Devel::Cover> 0.93 and all its recomm
 
 =item L<Devel::Cover> 0.93
 
-=item C<perl> 5.8.2
+=item C<perl> 5.008002
 
 =item L<Browser::Open>
 

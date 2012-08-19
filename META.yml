@@ -37,4 +37,4 @@ resources:
   homepage: http://search.cpan.org/dist/Task-Devel-Cover-Recommended/
   license: http://dev.perl.org/licenses/
   repository: http://git.profvince.com/?p=perl%2Fmodules%2FTask-Devel-Cover-Recommended.git
-version: v0.93.0
+version: v0.930.0

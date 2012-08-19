@@ -3,7 +3,7 @@ NAME
     recommended dependencies.
 
 VERSION
-    Version 0.93.0
+    Version v0.930.0
 
 SYNOPSIS
         $ cpan Task::Devel::Cover::Recommended
@@ -19,13 +19,14 @@ DEPENDENCIES
     ExtUtils::MakeMaker
 
   Build-time and test-time dependencies
+    ExtUtils::MakeMaker
     Test::Differences
     Test::More
     Test::Warn
 
   Run-time dependencies
     Devel::Cover 0.93
-    "perl" 5.8.2
+    "perl" 5.008002
     Browser::Open
     Digest::MD5
     JSON::PP

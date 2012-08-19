@@ -5,7 +5,9 @@ META.yml
 Makefile.PL
 README
 lib/Task/Devel/Cover/Recommended.pm
+samples/generate.pl
 t/00-load.t
+t/01-deps.t
 t/91-pod.t
 t/92-pod-coverage.t
 t/95-portability-files.t
