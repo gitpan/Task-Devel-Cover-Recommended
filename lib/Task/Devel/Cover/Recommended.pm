@@ -9,11 +9,11 @@ Task::Devel::Cover::Recommended - Install Devel::Cover and its recommended depen
 
 =head1 VERSION
 
-Version v0.930.0
+Version v0.930.1
 
 =cut
 
-our $VERSION = 'v0.930.0';
+our $VERSION = 'v0.930.1';
 
 =head1 SYNOPSIS
 
@@ -31,7 +31,9 @@ This task module lets you easily install L<Devel::Cover> 0.93 and all its recomm
 
 =over 4
 
-=item L<ExtUtils::MakeMaker>
+=item *
+
+L<ExtUtils::MakeMaker>
 
 =back
 
@@ -39,13 +41,21 @@ This task module lets you easily install L<Devel::Cover> 0.93 and all its recomm
 
 =over 4
 
-=item L<ExtUtils::MakeMaker>
+=item *
 
-=item L<Test::Differences>
+L<ExtUtils::MakeMaker>
 
-=item L<Test::More>
+=item *
 
-=item L<Test::Warn>
+L<Test::Differences>
+
+=item *
+
+L<Test::More>
+
+=item *
+
+L<Test::Warn>
 
 =back
 
@@ -53,31 +63,58 @@ This task module lets you easily install L<Devel::Cover> 0.93 and all its recomm
 
 =over 4
 
-=item L<Devel::Cover> 0.93
+=item *
 
-=item C<perl> 5.008002
+L<Devel::Cover> 0.93
 
-=item L<Browser::Open>
+=item *
 
-=item L<Digest::MD5>
+C<perl> 5.008002
 
-=item L<JSON::PP>
+=item *
 
-=item L<PPI::HTML> 1.07
+L<Browser::Open>
+
+=item *
+
+L<Digest::MD5>
+
+=item *
+
+L<JSON::PP>
+
+=item *
+
+L<PPI::HTML> 1.07
 
 Devel::Cover lets you optionally pick between L<PPI::HTML> and L<Perl::Tidy>, but it will only use the former if both are installed.
 
-=item L<Parallel::Iterator>
+=item *
 
-=item L<Pod::Coverage> 0.06
+L<Parallel::Iterator>
 
-=item L<Pod::Coverage::CountParents>
+=item *
 
-=item L<Storable>
+L<Pod::Coverage> 0.06
 
-=item L<Template> 2.00
+=item *
+
+L<Pod::Coverage::CountParents>
+
+=item *
+
+L<Storable>
+
+=item *
+
+L<Template> 2.00
 
 =back
+
+=head1 CAVEATS
+
+Note that run-time dependencies that are only recommended by Devel::Cover may not yet be installed at the time Devel::Cover is tested, as there is no explicit dependency link between them and in that case most CPAN clients default to install prerequisites in alphabetic order.
+However, they will be installed when Task::Devel::Cover::Recommended is, thus will be available when you actually use Devel::Cover.
 
 =head1 AUTHOR
 

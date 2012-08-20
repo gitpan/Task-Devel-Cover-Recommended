@@ -11,6 +11,7 @@ use Cwd;
 use File::Fetch;
 use File::Spec;
 use File::Temp 0.19;
+use Getopt::Std;
 use List::Util;
 use Parse::CPAN::Meta;
 
@@ -29,6 +30,9 @@ my %prereq_skip = (
 my %prereq_desc = (
  'PPI::HTML' => 'Devel::Cover lets you optionally pick between L<PPI::HTML> and L<Perl::Tidy>, but it will only use the former if both are installed.',
 );
+
+my %opts;
+getopts 'n' => \%opts;
 
 sub get_latest_dist {
  my $dist = shift;
@@ -148,8 +152,10 @@ my ($old_task_revision) = $old_task_version =~ /([0-9]+)$/;
 
 my $new_task_version  = version->parse($target_version)->normal;
 my $new_task_revision = $old_task_revision;
-++$new_task_revision
-      if version->parse($new_task_version) <= version->parse($old_task_version);
+if (!$opts{n}
+   and version->parse($new_task_version) <= version->parse($old_task_version)) {
+ ++$new_task_revision;
+}
 if (($target_version =~ tr/.//) < 2) {
  my @components     = split /\./, $new_task_version;
  $components[2]     = $new_task_revision;
@@ -170,7 +176,7 @@ sub deplist_to_pod {
  while (@deplist) {
   my ($module, $version) = splice @deplist, 0, 2;
   my $X = $module eq 'perl' ? 'C' : 'L';
-  $pod .= "=item $X<$module>";
+  $pod .= "=item *\n\n$X<$module>";
   $pod .= " $version" if $version;
   $pod .= "\n\n";
   if (my $desc = $prereq_desc{$module}) {
@@ -207,10 +213,15 @@ sub sorthr ($) {
  map { $_ => $hr->{$_} } sort keys %$hr;
 }
 
+# Make sure no package FOO statement appears in this file.
+my $package_statement = join ' ', 'package',
+                                   $task_pkg;
+
 my %vars = (
  TARGET_PKG             => $target_pkg,
  TARGET_VERSION         => $target_version,
  TASK_PKG               => $task_pkg,
+ PACKAGE_TASK_PKG       => $package_statement,
  TASK_VERSION           => $new_task_version,
  PERL_PREREQ            => $prereqs{perl},
  CONFIGURE_PREREQS_POD  => deplist_to_pod(sorthr $prereqs{configure}),
@@ -234,7 +245,7 @@ my %vars = (
 
 my %templates = (
  $task_file => <<'TEMPLATE',
-package __TASK_PKG__;
+__PACKAGE_TASK_PKG__;
 
 use strict;
 use warnings;
@@ -274,6 +285,11 @@ __BUILD_PREREQS_POD__
 =head2 Run-time dependencies
 
 __RUN_PREREQS_POD__
+
+=head1 CAVEATS
+
+Note that run-time dependencies that are only recommended by __TARGET_PKG__ may not yet be installed at the time __TARGET_PKG__ is tested, as there is no explicit dependency link between them and in that case most CPAN clients default to install prerequisites in alphabetic order.
+However, they will be installed when __TASK_PKG__ is, thus will be available when you actually use __TARGET_PKG__.
 
 =head1 AUTHOR
 
@@ -343,6 +359,7 @@ WriteMakefile(
  VERSION_FROM     => $file,
  ABSTRACT_FROM    => $file,
  PL_FILES         => {},
+ BUILD_REQUIRES   => $BUILD_PREREQS,
  PREREQ_PM        => $RUN_PREREQS,
  MIN_PERL_VERSION => '__PERL_PREREQ__',
  META_MERGE       => \%META,

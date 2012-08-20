@@ -54,6 +54,7 @@ WriteMakefile(
  VERSION_FROM     => $file,
  ABSTRACT_FROM    => $file,
  PL_FILES         => {},
+ BUILD_REQUIRES   => $BUILD_PREREQS,
  PREREQ_PM        => $RUN_PREREQS,
  MIN_PERL_VERSION => '5.008002',
  META_MERGE       => \%META,
