@@ -16,7 +16,7 @@ my $desc = 'required to test kwalitee';
 
 load_or_skip('Parse::RecDescent',  '1.967006', undef, $desc);
 load_or_skip('Module::ExtractUse', '0.24',     undef, $desc);
-load_or_skip('Test::Kwalitee',     undef,      undef, $desc);
+load_or_skip('Test::Kwalitee',     '1.01',     undef, $desc);
 
 SKIP: {
  eval { Test::Kwalitee->import(); };

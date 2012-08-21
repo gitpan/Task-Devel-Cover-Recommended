@@ -9,11 +9,11 @@ Task::Devel::Cover::Recommended - Install Devel::Cover and its recommended depen
 
 =head1 VERSION
 
-Version v0.930.1
+Version v0.930.2
 
 =cut
 
-our $VERSION = 'v0.930.1';
+our $VERSION = 'v0.930.2';
 
 =head1 SYNOPSIS
 

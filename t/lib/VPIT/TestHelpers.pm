@@ -27,6 +27,9 @@ sub diag {
  Test::More::diag($_) for @_;
 }
 
+our $TODO;
+local $TODO;
+
 sub load_or_skip {
  my ($pkg, $ver, $imports, $desc) = @_;
  my $spec = $ver && $ver !~ /^[0._]*$/ ? "$pkg $ver" : $pkg;

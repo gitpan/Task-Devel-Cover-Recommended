@@ -250,72 +250,72 @@ __PACKAGE_TASK_PKG__;
 use strict;
 use warnings;
 
-=head1 NAME
+\=head1 NAME
 
 __TASK_PKG__ - Install __TARGET_PKG__ and its recommended dependencies.
 
-=head1 VERSION
+\=head1 VERSION
 
 Version __TASK_VERSION__
 
-=cut
+\=cut
 
 our $VERSION = '__TASK_VERSION__';
 
-=head1 SYNOPSIS
+\=head1 SYNOPSIS
 
     $ cpan __TASK_PKG__
     $ cpanp -i __TASK_PKG__
     $ cpanm __TASK_PKG__
 
-=head1 DESCRIPTION
+\=head1 DESCRIPTION
 
 This task module lets you easily install L<__TARGET_PKG__> __TARGET_VERSION__ and all its recommended dependencies.
 
-=head1 DEPENDENCIES
+\=head1 DEPENDENCIES
 
-=head2 Configure-time dependencies
+\=head2 Configure-time dependencies
 
 __CONFIGURE_PREREQS_POD__
 
-=head2 Build-time and test-time dependencies
+\=head2 Build-time and test-time dependencies
 
 __BUILD_PREREQS_POD__
 
-=head2 Run-time dependencies
+\=head2 Run-time dependencies
 
 __RUN_PREREQS_POD__
 
-=head1 CAVEATS
+\=head1 CAVEATS
 
 Note that run-time dependencies that are only recommended by __TARGET_PKG__ may not yet be installed at the time __TARGET_PKG__ is tested, as there is no explicit dependency link between them and in that case most CPAN clients default to install prerequisites in alphabetic order.
 However, they will be installed when __TASK_PKG__ is, thus will be available when you actually use __TARGET_PKG__.
 
-=head1 AUTHOR
+\=head1 AUTHOR
 
 Vincent Pit, C<< <perl at profvince.com> >>, L<http://www.profvince.com>.
 
 You can contact me by mail or on C<irc.perl.org> (vincent).
 
-=head1 BUGS
+\=head1 BUGS
 
 Please report any bugs or feature requests to C<__BUG_EMAIL__>, or through the web interface at L<__BUG_QUEUE__>.
 I will be notified, and then you'll automatically be notified of progress on your bug as I make changes.
 
-=head1 SUPPORT
+\=head1 SUPPORT
 
 You can find documentation for this module with the perldoc command.
 
     perldoc __TASK_PKG__
 
-=head1 COPYRIGHT & LICENSE
+\=head1 COPYRIGHT & LICENSE
 
 Copyright __YEARS__ Vincent Pit, all rights reserved.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
 
-=cut
+\=cut
 
 1; # End of __TASK_PKG__
 TEMPLATE
@@ -401,6 +401,8 @@ for my $test (@tests) {
 }
 TEMPLATE
 );
+
+$templates{$task_file} =~ s/^\\=/=/mg;
 
 my $valid_keys = join '|', keys %vars;
 $valid_keys    = qr/$valid_keys/;

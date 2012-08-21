@@ -1,5 +1,8 @@
 Revision history for Task-Devel-Cover-Recommended
 
+0.930.2 2012-08-21 16:10 UTC
+        + Fix : Another attempt at hiding the POD template from CPAN websites.
+
 0.930.1 2012-08-20 11:05 UTC
         + Doc : Add a caveat and reformat POD.
         + Fix : BUILD_PREREQS are now set for ExtUtils::MakeMaker.

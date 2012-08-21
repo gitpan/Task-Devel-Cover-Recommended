@@ -3,7 +3,7 @@ NAME
     recommended dependencies.
 
 VERSION
-    Version v0.930.1
+    Version v0.930.2
 
 SYNOPSIS
         $ cpan Task::Devel::Cover::Recommended
