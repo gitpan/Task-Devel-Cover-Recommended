@@ -9,11 +9,11 @@ Task::Devel::Cover::Recommended - Install Devel::Cover and its recommended depen
 
 =head1 VERSION
 
-Version v0.930.2
+Version v0.940.0
 
 =cut
 
-our $VERSION = 'v0.930.2';
+our $VERSION = 'v0.940.0';
 
 =head1 SYNOPSIS
 
@@ -23,7 +23,7 @@ our $VERSION = 'v0.930.2';
 
 =head1 DESCRIPTION
 
-This task module lets you easily install L<Devel::Cover> 0.93 and all its recommended dependencies.
+This task module lets you easily install L<Devel::Cover> 0.94 and all its recommended dependencies.
 
 =head1 DEPENDENCIES
 
@@ -47,10 +47,6 @@ L<ExtUtils::MakeMaker>
 
 =item *
 
-L<Test::Differences>
-
-=item *
-
 L<Test::More>
 
 =item *
@@ -65,7 +61,7 @@ L<Test::Warn>
 
 =item *
 
-L<Devel::Cover> 0.93
+L<Devel::Cover> 0.94
 
 =item *
 

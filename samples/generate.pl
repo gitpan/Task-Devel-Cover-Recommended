@@ -95,6 +95,13 @@ my %eumm_phases = (
  build     => [ qw<build test> ],
  run       => [ qw<runtime>    ],
 );
+my %meta_phase_relationships = (
+ configure => [ qw<requires>                     ],
+ build     => [ qw<requires>                     ],
+ test      => [ qw<requires>                     ],
+ runtime   => [ qw<requires recommends suggests> ],
+);
+
 my %prereqs = (
  configure => {
   'ExtUtils::MakeMaker' => '0',
@@ -112,7 +119,7 @@ for my $eumm_phase (keys %eumm_phases) {
 
  for my $meta_phase (@{$eumm_phases{$eumm_phase}}) {
 
-  for my $type (qw<requires recommends>) {
+  for my $type (@{$meta_phase_relationships{$meta_phase}}) {
    my $phase_prereqs = $meta->{prereqs}{$meta_phase}{$type};
    next unless $phase_prereqs;
 
@@ -148,20 +155,28 @@ if (-e $task_file) {
  }
  close $old_fh;
 }
-my ($old_task_revision) = $old_task_version =~ /([0-9]+)$/;
 
-my $new_task_version  = version->parse($target_version)->normal;
-my $new_task_revision = $old_task_revision;
-if (!$opts{n}
-   and version->parse($new_task_version) <= version->parse($old_task_version)) {
- ++$new_task_revision;
-}
-if (($target_version =~ tr/.//) < 2) {
- my @components     = split /\./, $new_task_version;
- $components[2]     = $new_task_revision;
- $new_task_version  = join '.', @components;
+my $new_task_version;
+
+if ($opts{n}) {
+ $new_task_version = $old_task_version;
 } else {
- $new_task_version .= ".$new_task_revision";
+ my ($old_target_version, $old_task_revision)
+                                       = $old_task_version =~ /(.*)\.([0-9]+)$/;
+ my $new_task_revision;
+ if (version->parse($target_version) > version->parse($old_target_version)) {
+  $new_task_revision = 0;
+ } else {
+  $new_task_revision = $old_task_revision + 1;
+ }
+ $new_task_version = version->parse($target_version)->normal;
+ if (($target_version =~ tr/.//) < 2) {
+  my @components     = split /\./, $new_task_version;
+  $components[2]     = $new_task_revision;
+  $new_task_version  = join '.', @components;
+ } else {
+  $new_task_version .= ".$new_task_revision";
+ }
 }
 
 (my $bug_queue = $task_pkg) =~ s/::/-/g;
@@ -194,7 +209,7 @@ sub deplist_to_perl {
  return '{ }' unless @deplist;
 
  my $len = List::Util::max(
-  map length, @deplist[grep not($_ % 2), 0 .. $#deplist ]
+  map length, @deplist[grep not($_ % 2), 0 .. $#deplist]
  );
 
  my $perl = "{\n";

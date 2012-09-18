@@ -3,7 +3,7 @@ NAME
     recommended dependencies.
 
 VERSION
-    Version v0.930.2
+    Version v0.940.0
 
 SYNOPSIS
         $ cpan Task::Devel::Cover::Recommended
@@ -11,7 +11,7 @@ SYNOPSIS
         $ cpanm Task::Devel::Cover::Recommended
 
 DESCRIPTION
-    This task module lets you easily install Devel::Cover 0.93 and all its
+    This task module lets you easily install Devel::Cover 0.94 and all its
     recommended dependencies.
 
 DEPENDENCIES
@@ -21,14 +21,12 @@ DEPENDENCIES
   Build-time and test-time dependencies
     *   ExtUtils::MakeMaker
 
-    *   Test::Differences
-
     *   Test::More
 
     *   Test::Warn
 
   Run-time dependencies
-    *   Devel::Cover 0.93
+    *   Devel::Cover 0.94
 
     *   "perl" 5.008002
 

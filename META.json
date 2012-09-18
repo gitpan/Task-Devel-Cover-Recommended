@@ -23,7 +23,6 @@
       "build" : {
          "requires" : {
             "ExtUtils::MakeMaker" : "0",
-            "Test::Differences" : "0",
             "Test::More" : "0",
             "Test::Warn" : "0"
          }
@@ -36,7 +35,7 @@
       "runtime" : {
          "requires" : {
             "Browser::Open" : "0",
-            "Devel::Cover" : "0.93",
+            "Devel::Cover" : "0.94",
             "Digest::MD5" : "0",
             "JSON::PP" : "0",
             "PPI::HTML" : "1.07",
@@ -62,5 +61,5 @@
          "url" : "http://git.profvince.com/?p=perl%2Fmodules%2FTask-Devel-Cover-Recommended.git"
       }
    },
-   "version" : "v0.930.2"
+   "version" : "v0.940.0"
 }

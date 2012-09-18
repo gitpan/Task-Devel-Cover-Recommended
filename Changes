@@ -1,5 +1,11 @@
 Revision history for Task-Devel-Cover-Recommended
 
+0.940.0 2012-09-18 21:10 UTC
+        + Chg : Recommended *test* dependencies are no longer required by this
+                modules, as they are actually installed by most CPAN clients.
+                Hence Test::Differences is not a dependency anymore.
+        + Upd : Update to Devel::Cover 0.94.
+
 0.930.2 2012-08-21 16:10 UTC
         + Fix : Another attempt at hiding the POD template from CPAN websites.
 

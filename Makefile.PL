@@ -17,7 +17,6 @@ my $CONFIGURE_PREREQS = {
 
 my $BUILD_PREREQS = {
  'ExtUtils::MakeMaker' => '0',
- 'Test::Differences'   => '0',
  'Test::More'          => '0',
  'Test::Warn'          => '0',
 };
@@ -32,7 +31,7 @@ my $RUN_PREREQS = {
  'Pod::Coverage::CountParents' => '0',
  'Storable'                    => '0',
  'Template'                    => '2.00',
- 'Devel::Cover'                => '0.93',
+ 'Devel::Cover'                => '0.94',
 };
 
 my %META = (
