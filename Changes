@@ -1,5 +1,10 @@
 Revision history for Task-Devel-Cover-Recommended
 
+0.990.0 2013-01-30 19:45 UTC
+        + Tst : t/93-pod-spelling.t does not crash anymore on perl 5.12 and
+                below.
+        + Upd : Update to Devel::Cover 0.99.
+
 0.940.0 2012-09-18 21:10 UTC
         + Chg : Recommended *test* dependencies are no longer required by this
                 modules, as they are actually installed by most CPAN clients.

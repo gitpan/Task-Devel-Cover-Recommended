@@ -31,7 +31,7 @@ my $RUN_PREREQS = {
  'Pod::Coverage::CountParents' => '0',
  'Storable'                    => '0',
  'Template'                    => '2.00',
- 'Devel::Cover'                => '0.94',
+ 'Devel::Cover'                => '0.99',
 };
 
 my %META = (

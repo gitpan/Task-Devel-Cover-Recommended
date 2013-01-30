@@ -20,7 +20,7 @@ my $TESTED_PREREQS = {
 plan tests => keys(%$TESTED_PREREQS) + 1;
 
 my @tests = map [ $_ => $TESTED_PREREQS->{$_} ], keys %$TESTED_PREREQS;
-push @tests, [ 'Devel::Cover' => '0.94' ];
+push @tests, [ 'Devel::Cover' => '0.99' ];
 
 for my $test (@tests) {
  my ($module, $version) = @$test;

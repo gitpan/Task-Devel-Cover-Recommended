@@ -4,7 +4,7 @@
       "Vincent Pit <perl@profvince.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "ExtUtils::MakeMaker version 6.6302, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "ExtUtils::MakeMaker version 6.64, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "perl_5"
    ],
@@ -35,7 +35,7 @@
       "runtime" : {
          "requires" : {
             "Browser::Open" : "0",
-            "Devel::Cover" : "0.94",
+            "Devel::Cover" : "0.99",
             "Digest::MD5" : "0",
             "JSON::PP" : "0",
             "PPI::HTML" : "1.07",
@@ -61,5 +61,5 @@
          "url" : "http://git.profvince.com/?p=perl%2Fmodules%2FTask-Devel-Cover-Recommended.git"
       }
    },
-   "version" : "v0.940.0"
+   "version" : "v0.990.0"
 }

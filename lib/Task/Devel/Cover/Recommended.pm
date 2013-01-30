@@ -9,11 +9,11 @@ Task::Devel::Cover::Recommended - Install Devel::Cover and its recommended depen
 
 =head1 VERSION
 
-Version v0.940.0
+Version v0.990.0
 
 =cut
 
-our $VERSION = 'v0.940.0';
+our $VERSION = 'v0.990.0';
 
 =head1 SYNOPSIS
 
@@ -23,7 +23,7 @@ our $VERSION = 'v0.940.0';
 
 =head1 DESCRIPTION
 
-This task module lets you easily install L<Devel::Cover> 0.94 and all its recommended dependencies.
+This task module lets you easily install L<Devel::Cover> 0.99 and all its recommended dependencies.
 
 =head1 DEPENDENCIES
 
@@ -61,7 +61,7 @@ L<Test::Warn>
 
 =item *
 
-L<Devel::Cover> 0.94
+L<Devel::Cover> 0.99
 
 =item *
 
@@ -131,7 +131,7 @@ You can find documentation for this module with the perldoc command.
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2012 Vincent Pit, all rights reserved.
+Copyright 2012,2013 Vincent Pit, all rights reserved.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
