@@ -8,9 +8,3 @@ lib/Task/Devel/Cover/Recommended.pm
 samples/generate.pl
 t/00-load.t
 t/01-deps.t
-t/91-pod.t
-t/92-pod-coverage.t
-t/93-pod-spelling.t
-t/95-portability-files.t
-t/99-kwalitee.t
-t/lib/VPIT/TestHelpers.pm

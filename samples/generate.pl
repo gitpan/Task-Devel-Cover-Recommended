@@ -360,7 +360,7 @@ my %META = (
  build_requires     => $BUILD_PREREQS,
  dynamic_config     => 0,
  resources          => {
-  bugtracker => "http://rt.cpan.org/NoAuth/ReportBug.html?Queue=$dist",
+  bugtracker => "http://rt.cpan.org/Dist/Display.html?Name=$dist",
   homepage   => "http://search.cpan.org/dist/$dist/",
   license    => 'http://dev.perl.org/licenses/',
   repository => "http://git.profvince.com/?p=perl%2Fmodules%2F$dist.git",

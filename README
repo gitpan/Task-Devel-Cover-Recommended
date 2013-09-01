@@ -3,7 +3,7 @@ NAME
     recommended dependencies.
 
 VERSION
-    Version v0.990.0
+    Version v1.80.0
 
 SYNOPSIS
         $ cpan Task::Devel::Cover::Recommended
@@ -11,7 +11,7 @@ SYNOPSIS
         $ cpanm Task::Devel::Cover::Recommended
 
 DESCRIPTION
-    This task module lets you easily install Devel::Cover 0.99 and all its
+    This task module lets you easily install Devel::Cover 1.08 and all its
     recommended dependencies.
 
 DEPENDENCIES
@@ -26,7 +26,7 @@ DEPENDENCIES
     *   Test::Warn
 
   Run-time dependencies
-    *   Devel::Cover 0.99
+    *   Devel::Cover 1.08
 
     *   "perl" 5.008002
 

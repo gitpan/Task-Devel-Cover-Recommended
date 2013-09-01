@@ -9,11 +9,11 @@ Task::Devel::Cover::Recommended - Install Devel::Cover and its recommended depen
 
 =head1 VERSION
 
-Version v0.990.0
+Version v1.80.0
 
 =cut
 
-our $VERSION = 'v0.990.0';
+our $VERSION = 'v1.80.0';
 
 =head1 SYNOPSIS
 
@@ -23,7 +23,7 @@ our $VERSION = 'v0.990.0';
 
 =head1 DESCRIPTION
 
-This task module lets you easily install L<Devel::Cover> 0.99 and all its recommended dependencies.
+This task module lets you easily install L<Devel::Cover> 1.08 and all its recommended dependencies.
 
 =head1 DEPENDENCIES
 
@@ -61,7 +61,7 @@ L<Test::Warn>
 
 =item *
 
-L<Devel::Cover> 0.99
+L<Devel::Cover> 1.08
 
 =item *
 

@@ -4,7 +4,7 @@
       "Vincent Pit <perl@profvince.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "ExtUtils::MakeMaker version 6.64, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "perl_5"
    ],
@@ -35,7 +35,7 @@
       "runtime" : {
          "requires" : {
             "Browser::Open" : "0",
-            "Devel::Cover" : "0.99",
+            "Devel::Cover" : "1.08",
             "Digest::MD5" : "0",
             "JSON::PP" : "0",
             "PPI::HTML" : "1.07",
@@ -51,7 +51,7 @@
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Task-Devel-Cover-Recommended"
+         "web" : "http://rt.cpan.org/Dist/Display.html?Name=Task-Devel-Cover-Recommended"
       },
       "homepage" : "http://search.cpan.org/dist/Task-Devel-Cover-Recommended/",
       "license" : [
@@ -61,5 +61,5 @@
          "url" : "http://git.profvince.com/?p=perl%2Fmodules%2FTask-Devel-Cover-Recommended.git"
       }
    },
-   "version" : "v0.990.0"
+   "version" : "v1.80.0"
 }
